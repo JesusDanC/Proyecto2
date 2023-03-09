@@ -50,6 +50,18 @@ namespace Proyecto2._1
             marco2 = ExcelLecturas.TraerDatos(4, 2, direccion);
             marco3 = ExcelLecturas.TraerDatos(5, 2, direccion);
             marco4 = ExcelLecturas.TraerDatos(6, 2, direccion);
+            resultados = ExcelLecturas.TraerDatos(7, 2, direccion);
         }
+        
+        //si cumple x
+        //es optimo
+        //sino si
+        //es no usado recientemente
+        //sino si
+        // es fifo
+        //sino si
+        // es fifo 2.0
+        //sino si
+        // es reloj
     }
 }
