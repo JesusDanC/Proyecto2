@@ -29,8 +29,8 @@ namespace Proyecto2._1
                 CheckFileExists = true,
                 CheckPathExists = true,
 
-                DefaultExt = "xls",
-                Filter = "xls files(*.xls)|*.xls",
+                DefaultExt = "xlsx",
+                Filter = "xlsx files(*.xlsx)|*.xlsx",
                 FilterIndex = 2,
                 RestoreDirectory = true,
 

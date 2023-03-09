@@ -23,6 +23,7 @@ namespace Proyecto2._1
         /// </summary>       
         public Algoritmo(string direccion)
         {
+            InitializeComponent();
             this.direccion = direccion;
         }
 
@@ -30,6 +31,11 @@ namespace Proyecto2._1
         {
             Menu frm = new Menu();
             frm.Visible = true;
+        }
+
+        private void Algoritmo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
