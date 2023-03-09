@@ -52,7 +52,7 @@ namespace Proyecto2._1
             marco4 = ExcelLecturas.TraerDatos(6, 2, direccion);
             resultados = ExcelLecturas.TraerDatos(7, 2, direccion);
         }
-        
+        bool esOptimo = false, esUsadoR = false, esFifo = false, esSegundaVida = false, esReloj = false;
         //si cumple x
         //es optimo
         //sino si
