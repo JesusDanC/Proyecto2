@@ -15,13 +15,13 @@ namespace Proyecto2._1
     public partial class Algoritmo : System.Windows.Forms.Form
     {
         //arreglos en los que se guardaran los datos de los marcos
-        private List<string> referencias;
-        private List<string> marco1;
-        private List<string> marco2;
-        private List<string> marco3;
-        private List<string> marco4;
+        private static List<string> referencias;
+        private static List<string> marco1;
+        private static List<string> marco2;
+        private static List<string> marco3;
+        private static List<string> marco4;
         //arreglo que guarda los fallos y no fallos
-        private List<string> resultados;
+        private static List<string> resultados;
         private String direccion;
         public Algoritmo()
         {
@@ -52,16 +52,22 @@ namespace Proyecto2._1
             marco4 = ExcelLecturas.TraerDatos(6, 2, direccion);
             resultados = ExcelLecturas.TraerDatos(7, 2, direccion);
         }
-        bool esOptimo = false, esUsadoR = false, esFifo = false, esSegundaVida = false, esReloj = false;
-        //si cumple x
-        //es optimo
-        //sino si
-        //es no usado recientemente
-        //sino si
-        // es fifo
-        //sino si
-        // es fifo 2.0
-        //sino si
-        // es reloj
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool esOptimo = false, esUsadoR = false, esFifo = false, esSegundaVida = false, esReloj = false;
+            //si cumple x
+            //es optimo
+            //sino si\
+            MRU UsadoRecientemente = new MRU(referencias, marco1, marco2, marco3, marco4, resultados);
+            esUsadoR = UsadoRecientemente.comprobarAlgoritmo();
+            MessageBox.Show("Es usado " + esUsadoR);
+            //sino si
+            // es fifo
+            //sino si
+            // es fifo 2.0
+            //sino si
+            // es reloj
+        }
     }
 }
