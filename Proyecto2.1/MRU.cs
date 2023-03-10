@@ -50,7 +50,8 @@ namespace Proyecto2._1
                 }
                 else if (marcoVacio != 0) //si hay marco vacio entonces asignar y marcar error
                 {
-                    concuerda = comprobarAsignacion(marcoVacio, referenciaActual, i);                    
+                    concuerda = comprobarAsignacion(marcoVacio, referenciaActual, i);
+                    if (!concuerda) return false;
                 } else //si no hay marcos vacios y no existe es porque toca asignar
                 {
                     marcoAsignado = AplicarAlgoritmo(i,referenciaActual);
