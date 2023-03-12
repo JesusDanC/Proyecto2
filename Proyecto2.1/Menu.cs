@@ -47,14 +47,17 @@ namespace Proyecto2._1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            this.Close();
-            this.OnClosed(e);
+            Application.Exit();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
             lblDireccion.Text = direccion;
+        }
+
+        private void lblDireccion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

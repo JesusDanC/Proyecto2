@@ -27,7 +27,7 @@ namespace Proyecto2._1
             this.marco4 = marco4;
             this.resultados = resultados;
         }
-
+        
         internal bool comprobarAlgoritmo()
         {
             //bool hayVacios = false; //nos dice si hay marcos vacios

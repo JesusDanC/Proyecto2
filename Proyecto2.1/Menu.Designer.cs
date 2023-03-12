@@ -68,15 +68,17 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(93, 39);
+            this.lblDireccion.Font = new System.Drawing.Font("Comic Sans MS", 7F);
+            this.lblDireccion.Location = new System.Drawing.Point(-1, 38);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(92, 15);
+            this.lblDireccion.Size = new System.Drawing.Size(98, 17);
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Escoger Archivo";
+            this.lblDireccion.Click += new System.EventHandler(this.lblDireccion_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 380);
             this.Controls.Add(this.lblDireccion);

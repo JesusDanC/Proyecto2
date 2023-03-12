@@ -37,17 +37,19 @@
             // lblSeleccionar
             // 
             this.lblSeleccionar.AutoSize = true;
-            this.lblSeleccionar.Location = new System.Drawing.Point(161, 157);
+            this.lblSeleccionar.Location = new System.Drawing.Point(72, 56);
+            this.lblSeleccionar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeleccionar.Name = "lblSeleccionar";
-            this.lblSeleccionar.Size = new System.Drawing.Size(10, 13);
+            this.lblSeleccionar.Size = new System.Drawing.Size(11, 16);
             this.lblSeleccionar.TabIndex = 0;
             this.lblSeleccionar.Text = "-";
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(164, 89);
+            this.btnSeleccionar.Location = new System.Drawing.Point(75, 93);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(215, 23);
+            this.btnSeleccionar.Size = new System.Drawing.Size(287, 28);
             this.btnSeleccionar.TabIndex = 1;
             this.btnSeleccionar.Text = "Seleccionar documento";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(164, 269);
+            this.button1.Location = new System.Drawing.Point(75, 174);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 23);
+            this.button1.Size = new System.Drawing.Size(287, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "salir";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,17 +68,17 @@
             // 
             // MMU
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(458, 319);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.lblSeleccionar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MMU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MMU";            
+            this.Text = "MMU";
             this.Load += new System.EventHandler(this.MMU_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
