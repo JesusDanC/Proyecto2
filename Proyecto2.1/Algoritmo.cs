@@ -22,6 +22,13 @@ namespace Proyecto2._1
         private static List<string> marco4;
         //arreglo que guarda los fallos y no fallos
         private static List<string> resultados;
+
+        //arreglos para los bits
+        private static List<string> bitsM1;
+        private static List<string> bitsM2;
+        private static List<string> bitsM3;
+        private static List<string> bitsM4;
+
         private String direccion;
         public Algoritmo()
         {
@@ -51,6 +58,11 @@ namespace Proyecto2._1
             marco3 = ExcelLecturas.TraerDatos(5, 2, direccion);
             marco4 = ExcelLecturas.TraerDatos(6, 2, direccion);
             resultados = ExcelLecturas.TraerDatos(7, 2, direccion);
+            //leer bits
+            bitsM1 = ExcelLecturas.TraerDatos(10, 2, direccion);
+            bitsM2 = ExcelLecturas.TraerDatos(11, 2, direccion);
+            bitsM3 = ExcelLecturas.TraerDatos(12, 2, direccion);
+            bitsM4 = ExcelLecturas.TraerDatos(13, 2, direccion);
         }
 
         private void button1_Click(object sender, EventArgs e)

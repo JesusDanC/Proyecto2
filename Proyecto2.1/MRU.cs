@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto2._1
 {
-    class MRU
+    class MRU 
     {
         //arreglos en los que se guardaran los datos de los marcos
         private List<string> referencias;
@@ -47,8 +47,7 @@ namespace Proyecto2._1
                 if (yaAsignado) //asigna y no da error
                 {
                     concuerda = true;
-                }
-                else if (marcoVacio != 0) //si hay marco vacio entonces asignar y marcar error
+                } else if (marcoVacio != 0) //si hay marco vacio entonces asignar y marcar error
                 {
                     concuerda = comprobarAsignacion(marcoVacio, referenciaActual, i);
                     if (!concuerda) return false;

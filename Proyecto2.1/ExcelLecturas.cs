@@ -20,7 +20,7 @@ namespace Proyecto2._1
             List<string> datos = new List<string>();
 
             //nuestra plantilla se encuentra en las primeras 16 columnas
-            for (int i =columna ; i <= 16; i++)
+            for (int i = columna ; i <= 16; i++)
             {
                 //agregamos al arreglo todos los valores de esa fila y la columna que se esta corriendo
                 datos.Add(documento.GetCellValueAsString(fila, i));
