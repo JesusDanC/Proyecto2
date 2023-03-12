@@ -77,7 +77,9 @@ namespace Proyecto2._1
             //sino si
             // es fifo
             //sino si
-            // es fifo 2.0
+            Segundaoportunidad Segunda = new Segundaoportunidad(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
+            esSegundaVida = Segunda.comprobarAlgoritmo();
+            MessageBox.Show("Es Segunda Oportunidad");
             //sino si
             // es reloj
         }
