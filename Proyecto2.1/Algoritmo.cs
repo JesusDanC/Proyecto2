@@ -73,15 +73,42 @@ namespace Proyecto2._1
             //sino si\
             MRU UsadoRecientemente = new MRU(referencias, marco1, marco2, marco3, marco4, resultados);
             esUsadoR = UsadoRecientemente.comprobarAlgoritmo();
-            MessageBox.Show("Es usado " + esUsadoR);
+            if (esUsadoR == true)
+            {
+                MessageBox.Show("Es usado " + esUsadoR);
+                label6.Text = "Algoritmo utilizado: Usado recientemente";
+            }
             //sino si
             // es fifo
             //sino si
             Segundaoportunidad Segunda = new Segundaoportunidad(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
             esSegundaVida = Segunda.comprobarAlgoritmo();
-            MessageBox.Show("Es Segunda Oportunidad");
+            if(esSegundaVida == true)
+            {
+                MessageBox.Show("Es Segunda Oportunidad" + esSegundaVida);
+                label6.Text = "Algoritmo utilizado: Segunda oportunidad";
+            }
             //sino si
             // es reloj
+
+            //Cantidad de fallos
+            int f=0;
+            for(int i = 0; i < 15; i++)
+            {
+                if (resultados[i] == "f")
+                {
+                    f++;
+                }
+            }
+            label3.Text= "Cantidad de fallos: "+f;
+
+            //Rendimiento y frecuencia
+            double fre = 0, ren = 0;
+            fre = f / 15;
+            ren = 1 - fre;
+
+            label4.Text = "Rendimiento: "+ren;
+            label5.Text = "Frecuencia: "+fre;
         }
     }
 }

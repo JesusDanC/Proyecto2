@@ -68,9 +68,10 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Comic Sans MS", 7F);
             this.lblDireccion.Location = new System.Drawing.Point(-1, 38);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(106, 18);
+            this.lblDireccion.Size = new System.Drawing.Size(98, 17);
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Escoger Archivo";
             this.lblDireccion.Click += new System.EventHandler(this.lblDireccion_Click);
