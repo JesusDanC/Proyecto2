@@ -75,7 +75,7 @@ namespace Proyecto2._1
             esUsadoR = UsadoRecientemente.comprobarAlgoritmo();
             if (esUsadoR == true)
             {
-                MessageBox.Show("Es usado " + esUsadoR);
+                MessageBox.Show("Es No usado Recientemente" + esUsadoR);
                 label6.Text = "Algoritmo utilizado: Usado recientemente";
             }
             //sino si
@@ -92,23 +92,23 @@ namespace Proyecto2._1
             // es reloj
 
             //Cantidad de fallos
-            int f=0;
+            double fallos=0;
             for(int i = 0; i < 15; i++)
             {
                 if (resultados[i] == "f")
                 {
-                    f++;
+                    fallos++;
                 }
             }
-            label3.Text= "Cantidad de fallos: "+f;
+            label3.Text= "Cantidad de fallos: "+ fallos;
 
             //Rendimiento y frecuencia
             double fre = 0, ren = 0;
-            fre = f / 15;
+            fre = (fallos/15);
             ren = 1 - fre;
 
-            label4.Text = "Rendimiento: "+ren;
-            label5.Text = "Frecuencia: "+fre;
+            label4.Text = "Rendimiento: "+ ren;
+            label5.Text = "Frecuencia: "+ fre;
         }
     }
 }
