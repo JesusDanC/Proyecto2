@@ -8,15 +8,15 @@ namespace Proyecto2._1
 {
     class Segundaoportunidad
     {
-        private List<string> referencias;
-        private List<string> marco1;
-        private List<string> marco2;
-        private List<string> marco3;
-        private List<string> marco4;
-        private List<string> bitsM1;
-        private List<string> bitsM2;
-        private List<string> bitsM3;
-        private List<string> bitsM4;
+        protected List<string> referencias;
+        protected List<string> marco1;
+        protected List<string> marco2;
+        protected List<string> marco3;
+        protected List<string> marco4;
+        protected List<string> bitsM1;
+        protected List<string> bitsM2;
+        protected List<string> bitsM3;
+        protected List<string> bitsM4;
 
         public Segundaoportunidad(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> bitsM1, List<string> bitsM2, List<string> bitsM3, List<string> bitsM4)
         {
@@ -32,7 +32,7 @@ namespace Proyecto2._1
             this.bitsM4 = bitsM4;
         }
 
-        internal bool comprobarAlgoritmo()
+        public virtual bool comprobarAlgoritmo()
         {
             bool segunda;
             int marcoVacio; 
@@ -83,8 +83,12 @@ namespace Proyecto2._1
             return concuerda;
         }
 
-        private int comprobarMarcoVacio(int posicion)
+        protected int comprobarMarcoVacio(int posicion)
         {
+            if (posicion == -1)
+            {
+                return 1;
+            }
             if (marco1[posicion] == "")
             {
                 return 1;
@@ -107,7 +111,7 @@ namespace Proyecto2._1
             }
         }
         
-        private bool comprobarAsignacion(int marco, string referenciaActual, int posicion)
+        protected bool comprobarAsignacion(int marco, string referenciaActual, int posicion)
         {
             switch (marco)
             {
@@ -141,7 +145,7 @@ namespace Proyecto2._1
             return false;
         }
 
-        private bool comprobarSiExiste(int posicion, string referencia)
+        protected bool comprobarSiExiste(int posicion, string referencia)
         {
             try
             {
@@ -172,7 +176,7 @@ namespace Proyecto2._1
             }
         }
 
-        private bool confirmarsegunda(int pos, string refe)
+        protected bool confirmarsegunda(int pos, string refe)
         {
             if (marco1[pos] == refe && bitsM1[pos]=="1")
             {
@@ -196,9 +200,9 @@ namespace Proyecto2._1
             }
         }
 
-        private int Algoritmo(int posicion, string referenciaActual)
+        public int Algoritmo(int posicion, string referenciaActual)
         {
-            if (bitsM1[posicion] == "1" && bitsM2[posicion] == "1" && bitsM3[posicion] == "1" && bitsM4[posicion] == "1")
+            if (bitsM1[posicion-1] == "1" && bitsM2[posicion-1] == "1" && bitsM3[posicion-1] == "1" && bitsM4[posicion-1] == "1")
             {
                 int conteo1, conteo2, conteo3, conteo4, seleccionado;
                 conteo1 = Conteo1(posicion);
@@ -211,23 +215,23 @@ namespace Proyecto2._1
             else
             {
                 int conteo1, conteo2, conteo3, conteo4, seleccionado;
-                conteo1 = Conteo1(posicion);
-                conteo2 = Conteo2(posicion);
-                conteo3 = Conteo3(posicion);
-                conteo4 = Conteo4(posicion);
-                if (bitsM1[posicion] == "1")
+                conteo1 = Conteo1(posicion-1);
+                conteo2 = Conteo2(posicion-1);
+                conteo3 = Conteo3(posicion-1);
+                conteo4 = Conteo4(posicion-1);
+                if (bitsM1[posicion-1] == "1")
                 {
                     conteo1 = 0;
                 }
-                else if (bitsM2[posicion] == "1")
+                if (bitsM2[posicion-1] == "1")
                 {
                     conteo2 = 0;
                 }
-                else if (bitsM3[posicion] == "1")
+                if (bitsM3[posicion-1] == "1")
                 {
                     conteo3 = 0;
                 }
-                else if (bitsM4[posicion] == "1") 
+                if (bitsM4[posicion-1] == "1") 
                 {
                     conteo4 = 0;
                 }
@@ -261,7 +265,11 @@ namespace Proyecto2._1
 
         private int Conteo1(int posicion)
         {
-            if (marco1[posicion - 1] == marco1[posicion])
+            if (posicion == 1)
+            {
+                return 2;
+            }
+            if (marco1[posicion-1] != marco1[posicion])
             {
                 return 1;
             }
@@ -269,7 +277,7 @@ namespace Proyecto2._1
         }
         private int Conteo2(int posicion)
         {
-            if (marco2[posicion - 1] == marco2[posicion])
+            if (marco2[posicion - 1] != marco2[posicion])
             {
                 return 1;
             }
@@ -277,7 +285,7 @@ namespace Proyecto2._1
         }
         private int Conteo3(int posicion)
         {
-            if (marco3[posicion - 1] == marco3[posicion])
+            if (marco3[posicion - 1] != marco3[posicion])
             {
                 return 1;
             }
@@ -285,7 +293,7 @@ namespace Proyecto2._1
         }
         private int Conteo4(int posicion)
         {
-            if (marco4[posicion - 1] == marco4[posicion])
+            if (marco4[posicion - 1] != marco4[posicion])
             {
                 return 1;
             }

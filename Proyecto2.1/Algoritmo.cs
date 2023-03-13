@@ -68,47 +68,60 @@ namespace Proyecto2._1
         private void button1_Click(object sender, EventArgs e)
         {
             bool esOptimo = false, esUsadoR = false, esFifo = false, esSegundaVida = false, esReloj = false;
+            
+            MRU UsadoRecientemente = new MRU(referencias, marco1, marco2, marco3, marco4, resultados);
+            Segundaoportunidad Segunda = new Segundaoportunidad(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
+            Reloj reloj = new Reloj(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
+            
+            esUsadoR = UsadoRecientemente.comprobarAlgoritmo();
+            esReloj = reloj.comprobarAlgoritmo();
+
             //si cumple x
             //es optimo
             //sino si\
-            MRU UsadoRecientemente = new MRU(referencias, marco1, marco2, marco3, marco4, resultados);
-            esUsadoR = UsadoRecientemente.comprobarAlgoritmo();
             if (esUsadoR == true)
             {
-                MessageBox.Show("Es No usado Recientemente" + esUsadoR);
+                MessageBox.Show("Es MRU");
                 label6.Text = "Algoritmo utilizado: Usado recientemente";
             }
             //sino si
             // es fifo
             //sino si
-            Segundaoportunidad Segunda = new Segundaoportunidad(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
             esSegundaVida = Segunda.comprobarAlgoritmo();
             if(esSegundaVida == true)
             {
-                MessageBox.Show("Es Segunda Oportunidad" + esSegundaVida);
+                MessageBox.Show("Es Segunda Oportunidad");
                 label6.Text = "Algoritmo utilizado: Segunda oportunidad";
             }
-            //sino si
-            // es reloj
+            else if (esReloj)
+            {
+                MessageBox.Show("Es Algoritmo Reloj");
+                label6.Text = "Algoritmo utilizado: Reloj";
+            }
+                //sino si
+                // es reloj
 
-            //Cantidad de fallos
-            double fallos=0;
-            for(int i = 0; i < 15; i++)
+                CalcularFallosyFrecuencia();
+            //Cantidad de fallos         
+        }
+
+        private void CalcularFallosyFrecuencia()
+        {
+            double f = 0;
+            for (int i = 0; i < 15; i++)
             {
                 if (resultados[i] == "f")
                 {
                     fallos++;
                 }
             }
-            label3.Text= "Cantidad de fallos: "+ fallos;
-
+            label3.Text = "Cantidad de fallos: " + f;
             //Rendimiento y frecuencia
             double fre = 0, ren = 0;
             fre = (fallos/15);
             ren = 1 - fre;
-
-            label4.Text = "Rendimiento: "+ ren;
-            label5.Text = "Frecuencia: "+ fre;
+            label4.Text = "Rendimiento: " + ren;
+            label5.Text = "Frecuencia: " + fre;
         }
     }
 }
