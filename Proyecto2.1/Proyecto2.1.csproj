@@ -73,6 +73,7 @@
       <DependentUpon>Algoritmo.cs</DependentUpon>
     </Compile>
     <Compile Include="ExcelLecturas.cs" />
+    <Compile Include="FIFO.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

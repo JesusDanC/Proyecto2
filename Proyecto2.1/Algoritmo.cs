@@ -68,11 +68,13 @@ namespace Proyecto2._1
         private void button1_Click(object sender, EventArgs e)
         {
             bool esOptimo = false, esUsadoR = false, esFifo = false, esSegundaVida = false, esReloj = false;
-            
+
+            FIFO Fifo = new FIFO(referencias, marco1, marco2, marco3, marco4);
             MRU UsadoRecientemente = new MRU(referencias, marco1, marco2, marco3, marco4, resultados);
             Segundaoportunidad Segunda = new Segundaoportunidad(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
             Reloj reloj = new Reloj(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
-            
+
+            esFifo = Fifo.comprobarAlgoritmo();
             esUsadoR = UsadoRecientemente.comprobarAlgoritmo();
             esReloj = reloj.comprobarAlgoritmo();
 
@@ -85,6 +87,11 @@ namespace Proyecto2._1
                 label6.Text = "Algoritmo utilizado: Usado recientemente";
             }
             //sino si
+            if (esFifo == true)
+            {
+                MessageBox.Show("Es FIFO");
+                label6.Text = "Algoritmo utilizado: Fifo";
+            }
             // es fifo
             //sino si
             esSegundaVida = Segunda.comprobarAlgoritmo();
