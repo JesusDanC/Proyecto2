@@ -107,7 +107,7 @@ namespace Proyecto2._1
 
         private void CalcularFallosyFrecuencia()
         {
-            double f = 0;
+            double fallos = 0;
             for (int i = 0; i < 15; i++)
             {
                 if (resultados[i] == "f")
@@ -115,7 +115,7 @@ namespace Proyecto2._1
                     fallos++;
                 }
             }
-            label3.Text = "Cantidad de fallos: " + f;
+            label3.Text = "Cantidad de fallos: " + fallos;
             //Rendimiento y frecuencia
             double fre = 0, ren = 0;
             fre = (fallos/15);
