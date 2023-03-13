@@ -102,8 +102,7 @@ namespace Proyecto2._1
                 // es reloj
 
                 CalcularFallosyFrecuencia();
-            //Cantidad de fallos
-           
+            //Cantidad de fallos         
         }
 
         private void CalcularFallosyFrecuencia()
@@ -113,16 +112,14 @@ namespace Proyecto2._1
             {
                 if (resultados[i] == "f")
                 {
-                    f++;
+                    fallos++;
                 }
             }
             label3.Text = "Cantidad de fallos: " + f;
-
             //Rendimiento y frecuencia
             double fre = 0, ren = 0;
-            fre = f / 15;
+            fre = (fallos/15);
             ren = 1 - fre;
-
             label4.Text = "Rendimiento: " + ren;
             label5.Text = "Frecuencia: " + fre;
         }
