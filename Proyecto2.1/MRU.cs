@@ -15,10 +15,12 @@ namespace Proyecto2._1
         protected List<string> marco3;
         protected List<string> marco4;
         //arreglo que guarda los fallos y no fallos
+
         protected List<string> resultados;
+        private int num_ref;
 
         //constructor
-        public MRU(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> resultados)
+        public MRU(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> resultados, int num)
         {
             this.referencias = referencias;
             this.marco1 = marco1;
@@ -26,6 +28,7 @@ namespace Proyecto2._1
             this.marco3 = marco3;
             this.marco4 = marco4;
             this.resultados = resultados;
+            this.num_ref = num;
         }
         
         public virtual bool comprobarAlgoritmo()
@@ -36,7 +39,7 @@ namespace Proyecto2._1
             bool yaAsignado; //verifica si ya esta asignada la referencia
             bool concuerda = false; //verifica si concuerda la asignacion del algoritmo con la plantilla
             string referenciaActual; //guarda la referencia actual
-            for (int i = 1; i < 15; i++)
+            for (int i = 1; i < num_ref - 1; i++)
             {
                 //obtener referencia
                 referenciaActual = referencias[i];

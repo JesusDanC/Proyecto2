@@ -12,15 +12,16 @@ namespace Proyecto2._1
 {
     public partial class Menu : Form
     {
-        string direccion = "";
+        string direccion = "", num_ref="";
         public Menu()
         {
             InitializeComponent();
         }
-        public Menu(string _direccion)
+        public Menu(string _direccion, string _ref)
         {
             InitializeComponent();
             direccion = _direccion;
+            num_ref = _ref;
         }
 
 
@@ -35,7 +36,7 @@ namespace Proyecto2._1
         {
             if (lblDireccion.Text != "")
             {   
-                Algoritmo frm = new Algoritmo(lblDireccion.Text);
+                Algoritmo frm = new Algoritmo(lblDireccion.Text, num_ref);
                 frm.Show();
                 this.Hide();
             }

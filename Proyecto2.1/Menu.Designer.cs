@@ -69,7 +69,7 @@
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Comic Sans MS", 7F);
-            this.lblDireccion.Location = new System.Drawing.Point(-1, 38);
+            this.lblDireccion.Location = new System.Drawing.Point(-1, 22);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(98, 17);
             this.lblDireccion.TabIndex = 6;

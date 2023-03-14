@@ -41,13 +41,14 @@ namespace Proyecto2._1
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 lblSeleccionar.Text = openFileDialog1.FileName;
+                
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Menu frm = new Menu(lblSeleccionar.Text);
+            Menu frm = new Menu(lblSeleccionar.Text, lblref.Text);
             frm.Show();
             this.Close();
         }
@@ -55,6 +56,11 @@ namespace Proyecto2._1
         private void MMU_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            lblref.Text = numericUpDown1.Value.ToString();
         }
     }
 }

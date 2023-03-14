@@ -9,7 +9,7 @@ namespace Proyecto2._1
     class Reloj : Segundaoportunidad
     {
         //constructor
-        public Reloj(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> bitsM1, List<string> bitsM2, List<string> bitsM3, List<string> bitsM4) : base(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4)
+        public Reloj(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> bitsM1, List<string> bitsM2, List<string> bitsM3, List<string> bitsM4, int num) : base(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4, num)
         {
             this.marco1 = marco1;
             this.marco2 = marco2;
@@ -20,6 +20,7 @@ namespace Proyecto2._1
             this.bitsM2 = bitsM2;
             this.bitsM3 = bitsM3;
             this.bitsM4 = bitsM4;
+            this.num_ref = num;
         }
 
         private int MarcoApuntado = 1;
@@ -32,7 +33,7 @@ namespace Proyecto2._1
             bool concuerda = false;
             string referenciaActual;
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < num_ref-1; i++)
             {
                 referenciaActual = referencias[i];
 
