@@ -8,7 +8,7 @@ namespace Proyecto2._1
 {
     class Optimo : MRU
     {
-        public Optimo(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> resultados) : base(referencias, marco1, marco2, marco3, marco4, resultados)
+        public Optimo(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> resultados, int num) : base(referencias, marco1, marco2, marco3, marco4, resultados, num)
         {
             this.referencias = referencias;
             this.marco1 = marco1;
@@ -16,6 +16,7 @@ namespace Proyecto2._1
             this.marco3 = marco3;
             this.marco4 = marco4;
             this.resultados = resultados;
+            this.num_ref = num;
         }
 
         public override bool comprobarAlgoritmo()
@@ -26,7 +27,7 @@ namespace Proyecto2._1
             bool concuerda = true;
             string referenciaActual;
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < referencias.Count-1; i++)
             {
                 referenciaActual = referencias[i];
 
@@ -75,7 +76,7 @@ namespace Proyecto2._1
 
         private int ConteoDeUsoFuturo(List<string> referencias, int posicion, string valorActual)
         {
-            if ((posicion + 1) == 15)
+            if ((posicion + 1) == num_ref)
             {
                 return 1;
             }

@@ -17,7 +17,7 @@ namespace Proyecto2._1
         //arreglo que guarda los fallos y no fallos
 
         protected List<string> resultados;
-        private int num_ref;
+        protected int num_ref;
 
         //constructor
         public MRU(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> resultados, int num)

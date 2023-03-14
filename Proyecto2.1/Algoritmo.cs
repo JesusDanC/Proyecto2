@@ -54,6 +54,7 @@ namespace Proyecto2._1
         private void Algoritmo_Load(object sender, EventArgs e)
         {
             Int32.TryParse(num_ref, out int num);
+            num++;
             label1.Text = "Referencias a usar: " + num;
             referencias = ExcelLecturas.TraerDatos(2, 2, direccion, num);
             marco1 = ExcelLecturas.TraerDatos(3, 2, direccion, num);
@@ -76,6 +77,7 @@ namespace Proyecto2._1
             FIFO Fifo = new FIFO(referencias, marco1, marco2, marco3, marco4, num);
             MRU UsadoRecientemente = new MRU(referencias, marco1, marco2, marco3, marco4, resultados, num);
             Segundaoportunidad Segunda = new Segundaoportunidad(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4, num);
+            Optimo optimo = new Optimo(referencias, marco1, marco2, marco3, marco4, resultados, num);
             Reloj reloj = new Reloj(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4, num);
 
 
