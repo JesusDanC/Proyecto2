@@ -71,31 +71,29 @@ namespace Proyecto2._1
 
             FIFO Fifo = new FIFO(referencias, marco1, marco2, marco3, marco4);
             MRU UsadoRecientemente = new MRU(referencias, marco1, marco2, marco3, marco4, resultados);
+            Optimo optimo = new Optimo(referencias, marco1, marco2, marco3, marco4, resultados);
             Segundaoportunidad Segunda = new Segundaoportunidad(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
             Reloj reloj = new Reloj(referencias, marco1, marco2, marco3, marco4, bitsM1, bitsM2, bitsM3, bitsM4);
 
             esFifo = Fifo.comprobarAlgoritmo();
             esUsadoR = UsadoRecientemente.comprobarAlgoritmo();
             esReloj = reloj.comprobarAlgoritmo();
+            esOptimo = optimo.comprobarAlgoritmo();
+            esSegundaVida = Segunda.comprobarAlgoritmo();
 
-            //si cumple x
-            //es optimo
-            //sino si\
             if (esUsadoR == true)
             {
                 MessageBox.Show("Es MRU");
                 label6.Text = "Algoritmo utilizado: Usado recientemente";
-            }
-            //sino si
-            if (esFifo == true)
+            }else if (esOptimo)
+            {
+                MessageBox.Show("Es Optimo");
+                label6.Text = "Algoritmo utilizado: Optimo";
+            }else if (esFifo == true)
             {
                 MessageBox.Show("Es FIFO");
                 label6.Text = "Algoritmo utilizado: Fifo";
-            }
-            // es fifo
-            //sino si
-            esSegundaVida = Segunda.comprobarAlgoritmo();
-            if(esSegundaVida == true)
+            }else if(esSegundaVida == true)
             {
                 MessageBox.Show("Es Segunda Oportunidad");
                 label6.Text = "Algoritmo utilizado: Segunda oportunidad";
@@ -104,12 +102,15 @@ namespace Proyecto2._1
             {
                 MessageBox.Show("Es Algoritmo Reloj");
                 label6.Text = "Algoritmo utilizado: Reloj";
-            }
-                //sino si
-                // es reloj
+            }else
+            {
+                MessageBox.Show("Tu plantilla no concuerda con ningun algoritmo");
+                label6.Text = "Algoritmo utilizado: no coincide ningun algoritmo";
 
-                CalcularFallosyFrecuencia();
+            }
+
             //Cantidad de fallos         
+            CalcularFallosyFrecuencia();
         }
 
         private void CalcularFallosyFrecuencia()
@@ -117,7 +118,7 @@ namespace Proyecto2._1
             double fallos = 0;
             for (int i = 0; i < 15; i++)
             {
-                if (resultados[i] == "f")
+                if (resultados[i] == "f"|| resultados[i] == "F")
                 {
                     fallos++;
                 }

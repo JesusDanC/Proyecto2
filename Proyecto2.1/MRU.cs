@@ -9,13 +9,13 @@ namespace Proyecto2._1
     class MRU 
     {
         //arreglos en los que se guardaran los datos de los marcos
-        private List<string> referencias;
-        private List<string> marco1;
-        private List<string> marco2;
-        private List<string> marco3;
-        private List<string> marco4;
+        protected List<string> referencias;
+        protected List<string> marco1;
+        protected List<string> marco2;
+        protected List<string> marco3;
+        protected List<string> marco4;
         //arreglo que guarda los fallos y no fallos
-        private List<string> resultados;
+        protected List<string> resultados;
 
         //constructor
         public MRU(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> resultados)
@@ -28,7 +28,7 @@ namespace Proyecto2._1
             this.resultados = resultados;
         }
         
-        internal bool comprobarAlgoritmo()
+        public virtual bool comprobarAlgoritmo()
         {
             //bool hayVacios = false; //nos dice si hay marcos vacios
             int marcoVacio; //se marca aqui el marco que esta vacio
@@ -68,8 +68,12 @@ namespace Proyecto2._1
         /// <summary>
         /// Comprueba si hay marcos vacios y lo devuelve
         /// </summary>
-        private int comprobarMarcoVacio(int posicion)
+        protected int comprobarMarcoVacio(int posicion)
         {
+            if (posicion == -1)
+            {
+                return 1;
+            }
             if (marco1[posicion] == "")
             {
                 return 1;
@@ -94,7 +98,7 @@ namespace Proyecto2._1
         /// <summary>
         /// Comprueba que la asignacion por el algortimo sea la misma asignada en la plantilla
         /// </summary>
-        private bool comprobarAsignacion(int marco, string referenciaActual, int posicion)
+        protected bool comprobarAsignacion(int marco, string referenciaActual, int posicion)
         {
             switch (marco)
             {
@@ -131,7 +135,7 @@ namespace Proyecto2._1
         /// <summary>
         /// Comprueba si existe ya la asignacion para la referencia
         /// </summary>
-        private bool comprobarSiExiste(int posicion, string referencia)
+        protected bool comprobarSiExiste(int posicion, string referencia)
         {
             try
             {
@@ -161,7 +165,7 @@ namespace Proyecto2._1
                 throw;
             }
         }
-        private int AplicarAlgoritmo(int posicion, string referenciaActual)
+        public virtual int AplicarAlgoritmo(int posicion, string referenciaActual)
         {
             int conteo1, conteo2, conteo3, conteo4, seleccionado;
             conteo1 = ConteoDeUsoReciente(referencias, posicion, marco1[posicion-1]);
@@ -175,7 +179,7 @@ namespace Proyecto2._1
         /// <summary>
         /// cuenta la ultima vez que aparecio el numero
         /// </summary>        
-        private int ConteoDeUsoReciente(List<string> referencias, int posicion, string valorActual)
+        protected int ConteoDeUsoReciente(List<string> referencias, int posicion, string valorActual)
         {
             if (referencias[posicion-1] == valorActual)
             {
@@ -183,7 +187,7 @@ namespace Proyecto2._1
             }
             return 1 + ConteoDeUsoReciente(referencias, posicion - 1, valorActual);
         }
-        private int SelecionarMayorConteo(int conteo1, int conteo2, int conteo3, int conteo4)
+        protected int SelecionarMayorConteo(int conteo1, int conteo2, int conteo3, int conteo4)
         {
             int mayor = conteo1;
             int marcoSeleccionado = 1;

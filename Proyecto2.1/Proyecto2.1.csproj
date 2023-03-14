@@ -87,6 +87,7 @@
       <DependentUpon>MMU.cs</DependentUpon>
     </Compile>
     <Compile Include="MRU.cs" />
+    <Compile Include="Optimo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reloj.cs" />
