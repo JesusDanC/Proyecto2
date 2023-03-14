@@ -17,8 +17,9 @@ namespace Proyecto2._1
         protected List<string> bitsM2;
         protected List<string> bitsM3;
         protected List<string> bitsM4;
+        protected int num_ref;
 
-        public Segundaoportunidad(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> bitsM1, List<string> bitsM2, List<string> bitsM3, List<string> bitsM4)
+        public Segundaoportunidad(List<string> referencias, List<string> marco1, List<string> marco2, List<string> marco3, List<string> marco4, List<string> bitsM1, List<string> bitsM2, List<string> bitsM3, List<string> bitsM4, int num)
         {
             this.referencias = referencias;
             this.marco1 = marco1;
@@ -30,6 +31,7 @@ namespace Proyecto2._1
             this.bitsM2 = bitsM2;
             this.bitsM3 = bitsM3;
             this.bitsM4 = bitsM4;
+            this.num_ref = num;
         }
 
         public virtual bool comprobarAlgoritmo()
@@ -40,7 +42,7 @@ namespace Proyecto2._1
             bool yaAsignado;
             bool concuerda = false; 
             string referenciaActual; 
-            for (int i = 1; i < 15; i++)
+            for (int i = 1; i < num_ref-1; i++)
             {
                 
                 referenciaActual = referencias[i];
